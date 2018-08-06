@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Accept" xml:space="preserve">
+    <value>Accepta</value>
+  </data>
+  <data name="EmailPlaceHolder" xml:space="preserve">
+    <value>Escriviu l'adreça electrònica</value>
+  </data>
+  <data name="EmailValidation" xml:space="preserve">
+    <value>Heu d’introduir una data!</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>#Error</value>
+  </data>
+  <data name="PasswordValidation" xml:space="preserve">
+    <value>Introduir una contrasenya.</value>
+  </data>
+  <data name="Rememberme" xml:space="preserve">
+    <value>en aquest cas:</value>
+  </data>
+  <data name="SomethingWrong" xml:space="preserve">
+    <value>Error desconegut. Si us plau, intenti-ho més tard.</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Entra</value>
+  </data>
+  <data name="EMail" xml:space="preserve">
+    <value>Correu electrònic</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Contrasenya</value>
+  </data>
+  <data name="PasswordPlaceHolder" xml:space="preserve">
+    <value>Introdueix la contrasenya</value>
+  </data>
+  <data name="Forgot" xml:space="preserve">
+    <value>Heu oblidat la contrasenya?</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registra</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Cerca</value>
+  </data>
+  <data name="Countries" xml:space="preserve">
+    <value>Països</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Informació</value>
+  </data>
+  <data name="Capital" xml:space="preserve">
+    <value>Capital</value>
+  </data>
+  <data name="Population" xml:space="preserve">
+    <value>Població</value>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>Àrea</value>
+  </data>
+  <data name="AlphaCode2" xml:space="preserve">
+    <value>Codi alfa 2:!</value>
+  </data>
+  <data name="AlphaCode3" xml:space="preserve">
+    <value>Codi alfa 3:!</value>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>Regió</value>
+  </data>
+  <data name="Subregion" xml:space="preserve">
+    <value>Subregió</value>
+  </data>
+  <data name="Demonym" xml:space="preserve">
+    <value>Gentilici:!</value>
+  </data>
+  <data name="NativeName" xml:space="preserve">
+    <value>Nom:!</value>
+  </data>
+  <data name="NumericCode" xml:space="preserve">
+    <value>Numèric</value>
+  </data>
+  <data name="Borders" xml:space="preserve">
+    <value>Vores</value>
+  </data>
+  <data name="Currencies" xml:space="preserve">
+    <value>Monedes</value>
+  </data>
+  <data name="German" xml:space="preserve">
+    <value>Alemany</value>
+  </data>
+  <data name="Spanish" xml:space="preserve">
+    <value>Espanyol</value>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>Francès</value>
+  </data>
+  <data name="Japanese" xml:space="preserve">
+    <value>Japonès</value>
+  </data>
+  <data name="Italian" xml:space="preserve">
+    <value>Italià</value>
+  </data>
+  <data name="Brazilian" xml:space="preserve">
+    <value>Brasileny</value>
+  </data>
+  <data name="Portuguese" xml:space="preserve">
+    <value>Portuguès</value>
+  </data>
+  <data name="Dutch" xml:space="preserve">
+    <value>Neerlandès</value>
+  </data>
+  <data name="Croatian" xml:space="preserve">
+    <value>Croat</value>
+  </data>
+  <data name="Persian" xml:space="preserve">
+    <value>Persa</value>
+  </data>
+  <data name="Translations" xml:space="preserve">
+    <value>Traduccions</value>
+  </data>
+  <data name="MyLanguages" xml:space="preserve">
+    <value>Llengües</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menú</value>
+  </data>
+  <data name="MyProfile" xml:space="preserve">
+    <value>El meu perfil</value>
+  </data>
+  <data name="Statics" xml:space="preserve">
+    <value>Estàtica</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Tanca la sessió</value>
+  </data>
+  <data name="RegisterTitle" xml:space="preserve">
+    <value>Nou usuari</value>
+  </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>Desa la imatge al disc</value>
+  </data>
+  <data name="FirstNameLabel" xml:space="preserve">
+    <value>Nom:</value>
+  </data>
+  <data name="FirstNamePlaceHolder" xml:space="preserve">
+    <value>Introduïu el nom...!</value>
+  </data>
+  <data name="FirstNameValidation" xml:space="preserve">
+    <value>Heu d&amp;#39;introduir un primer nom.!</value>
+  </data>
+  <data name="LastNameLabel" xml:space="preserve">
+    <value>Cognoms:</value>
+  </data>
+  <data name="LastNamePlaceHolder" xml:space="preserve">
+    <value>Introduce el nombre</value>
+  </data>
+  <data name="PhoneLabel" xml:space="preserve">
+    <value>Telèfon</value>
+  </data>
+  <data name="PhonePlaceHolder" xml:space="preserve">
+    <value>Especifiqueu el número de telèfon que vulgueu utilitzar per a la verificació</value>
+  </data>
+  <data name="PhoneValidation" xml:space="preserve">
+    <value>Per registrar-vos per obtenir un compte en línia del Multi-Factor Authentication, cal que introduïu un número de telèfon en un dels &amp;lt;a href='/reports/global_rates_report?public=1' target='blank'&amp;gt;36 països gratuïts&amp;lt;/a&amp;gt;. El Multi-Factor Authentication funciona a tot el món, però és possible que s'apliquin taxes addicionals de serveis globals. Per obtenir més informació dels serveis globals o per registrar-vos, poseu-vos en contacte amb el departament de vendes del Multi-Factor Authentication.</value>
+  </data>
+  <data name="ConfirmLabel" xml:space="preserve">
+    <value>Confirma</value>
+  </data>
+  <data name="EmailValidation2" xml:space="preserve">
+    <value>Heu d'introduir una adreça electrònica vàlida.</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel·la</value>
+  </data>
+  <data name="FromGallery" xml:space="preserve">
+    <value>&amp;Desancora-ho de la galeria</value>
+  </data>
+  <data name="FromCamera" xml:space="preserve">
+    <value>Insereix una imatge des de la càmera</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Desa</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Canvia la contrasenya</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Contrasenya actual</value>
+  </data>
+  <data name="CurrentPasswordPlaceHolder" xml:space="preserve">
+    <value>Introduïu la contrasenya actual.</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Contrasenya nova</value>
+  </data>
+  <data name="NewPasswordPlaceHolder" xml:space="preserve">
+    <value>Introdueix la contrasenya nova</value>
+  </data>
+  <data name="GINI" xml:space="preserve">
+    <value>GINI:!</value>
+  </data>
+  <data name="LastNameValidation" xml:space="preserve">
+    <value>Heu d’introduir una data!</value>
+  </data>
+  <data name="ConfirmPlaceHolder" xml:space="preserve">
+    <value>Introduïu la contrasenya confirmant ...</value>
+  </data>
+  <data name="ConfirmValidation" xml:space="preserve">
+    <value>Heu d&amp;#39;introduir una confirmació.</value>
+  </data>
+  <data name="PasswordValidation2" xml:space="preserve">
+    <value>La contrasenya ha de tenir almenys 6 caràcters</value>
+  </data>
+  <data name="ConfirmValidation2" xml:space="preserve">
+    <value>La confirmació de %s no coincideix.</value>
+  </data>
+  <data name="SourceImageQuestion" xml:space="preserve">
+    <value>On vols que anem?</value>
+  </data>
+  <data name="ConnectionError1" xml:space="preserve">
+    <value>Encén la teua TV.</value>
+  </data>
+  <data name="ConnectionError2" xml:space="preserve">
+    <value>Comprovi que tingui conexió a Internet.</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>'El correu electrònic o la contrasenya són incorrectes.'</value>
+  </data>
+  <data name="ChagePasswordConfirm" xml:space="preserve">
+    <value>S'ha canviat la contrasenya.</value>
+  </data>
+  <data name="PasswordError" xml:space="preserve">
+    <value>La teva contrasenya és incorrecta.</value>
+  </data>
+  <data name="CentroValidation" xml:space="preserve">
+    <value>Heu d'introduir un centro.!</value>
+  </data>
+  <data name="Aviso" xml:space="preserve">
+    <value>Avís</value>
+  </data>
+  <data name="CambioIdioma" xml:space="preserve">
+    <value>Canvia l&amp;apos; aparença de l&amp;apos; aplicacióNAME OF TRANSLATORS</value>
+  </data>
+</root>

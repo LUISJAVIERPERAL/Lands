@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.ActividadesPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Icon="ico_actividades"
+    BackgroundColor="White"
+    Title="Actividades">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ffimageloadingsvg:SvgImageSourceConverter 
+                x:Key="SvgImageSourceConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Calendario}"
+           >
+            <StackLayout
+                BackgroundColor="LightGray">
+
+                <Label
+                    BackgroundColor="LightGray"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="{Binding HijoActual}"
+                    TextColor="Gray">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
+
+                </Label>
+            </StackLayout>
+            <ListView 
+                BackgroundColor="White"
+                HasUnevenRows="true" 
+                IsPullToRefreshEnabled="true"
+              
+                ItemsSource="{Binding Actividades}"
+                SeparatorVisibility="Default"
+               >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame
+                           
+                             
+                                Margin="2">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectActividadCommand}"/>
+                                </Frame.GestureRecognizers>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout 
+                                        Grid.Column="0"
+                                        VerticalOptions="Start">
+                                        <Label 
+                                            FontSize="Default"
+                                            FontAttributes="Bold"
+                                            Text="{Binding Nombreactividad}"
+                                            TextColor="Black">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                     <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+
+
+                                        </Label>
+                                       
+                                    </StackLayout>
+                                    <StackLayout 
+                                        Grid.Column="1"
+                                        VerticalOptions="Start">
+                                        <Label 
+                                            FontAttributes="Bold"
+                                            FontSize="Default"
+                                            Text="{Binding Diassemana}"
+                                            TextColor="Black">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+
+                                        </Label>
+                                    </StackLayout>
+                                    <Image 
+                                        Grid.Column="2"
+                                        HorizontalOptions="End" 
+                                        Source="ic_chevron_right">
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

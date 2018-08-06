@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.ServiciosPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Icon="ico_comida"
+    BackgroundColor="Silver"
+    Title="Servicios">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ffimageloadingsvg:SvgImageSourceConverter 
+                x:Key="SvgImageSourceConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Servicios}"
+            Padding="5">
+            <Label
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="{Binding Nomcompleto}"
+                    TextColor="Black">
+            </Label>
+            <ListView 
+                BackgroundColor="Silver"
+                HasUnevenRows="true" 
+                IsPullToRefreshEnabled="true"
+              
+                ItemsSource="{Binding Servicios}"
+                SeparatorVisibility="None"
+               >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame
+                                CornerRadius="20"
+                                HasShadow="true"
+                                Margin="2">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectServicioCommand}"/>
+                                </Frame.GestureRecognizers>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="10"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout 
+                                        Grid.Column="0"
+                                        VerticalOptions="Start">
+                                        <Label 
+                                            FontAttributes="Bold"
+                                        
+                                            Text="{Binding Nombreservicio}"
+                                            TextColor="Black">
+                                        </Label>
+                                        <Label 
+                                            FontAttributes="Bold"
+                                        
+                                            Text="{Binding Nombreasistencia}"
+                                            TextColor="Black">
+                                        </Label>
+                                    </StackLayout>
+                                    <StackLayout 
+                                        Grid.Column="1"
+                                        VerticalOptions="Start">
+                                        <Label 
+                                            FontAttributes="Bold"
+                                        
+                                            Text="{Binding Nombreturno}"
+                                            TextColor="Black">
+                                        </Label>
+                                    </StackLayout>
+                                    <StackLayout 
+                                     Grid.Column="2"
+                                      VerticalOptions="Start">
+                                        <Label 
+                                            Text="Mesa:"
+                                            TextColor="Black">
+                                        </Label>
+                                       
+
+                                    </StackLayout>
+                                    <StackLayout 
+                                     Grid.Column="3"
+                                        VerticalOptions="Start">
+                                        <Label 
+                                            Text="{Binding Codmesa}"
+                                            TextColor="Black">
+                                        </Label>
+
+                                    </StackLayout>
+                                    <Image 
+                                        Grid.Column="4"
+                                        HorizontalOptions="End" 
+                                        Source="ic_chevron_right">
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

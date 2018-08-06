@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.MenusesPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Icon="ico_menu"
+    Title="Menu">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ffimageloadingsvg:SvgImageSourceConverter 
+                x:Key="SvgImageSourceConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Servicio}">
+            <StackLayout
+               
+                Padding="5">
+                <StackLayout>
+                <Label
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="{Binding HijoActual}"
+                    TextColor="Black">
+                </Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="MENU PARA EL DIA"
+                    TextColor="Black">
+                </Label>
+            </StackLayout>
+                <StackLayout>
+                    <Label
+               
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="{Binding Fechapulsada}"
+                    TextColor="Black">
+                </Label>
+            </StackLayout>
+                <ListView 
+                    
+                BackgroundColor="Silver"
+                HasUnevenRows="true" 
+               ItemsSource="{Binding Menudia}"
+                SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame
+                                CornerRadius="20"
+                                HasShadow="true"
+                                Margin="2">
+                                    <Grid>
+                    
+                                        
+                                        <StackLayout
+                                            Grid.Row="0">
+                                            <Label
+               
+                    FontAttributes="Bold"
+                                               
+                HorizontalOptions="Center"
+                   Text="{Binding Nombremenu}"
+                   FontSize="Large"
+                                                TextColor="Black">
+                   
+                                            </Label>
+                                        </StackLayout>
+                                        <StackLayout
+                                            Grid.Row="1">
+                                            <Label
+               
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="Entrante"
+                     TextColor="DarkTurquoise">
+                                            </Label>
+                                        </StackLayout>
+                                        <StackLayout
+                                            Grid.Row="2">
+                                            <Label
+               
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="{Binding Entrante}"
+                    TextColor="Black">
+                                            </Label>
+                                        </StackLayout>
+                                        <StackLayout
+                                            Grid.Row="3">
+                                                    <Label
+               
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="Primer Plato"
+                     TextColor="DarkTurquoise">
+                                 </Label>
+                                                </StackLayout>
+                                                <StackLayout
+                                            Grid.Row="4">
+                                                    <Label
+               
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="{Binding Primero}"
+                    TextColor="Black">
+                                            </Label>
+                                        </StackLayout>
+                                        <StackLayout
+                                            Grid.Row="5">
+                                                            <Label
+               
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="Segundo Plato"
+                     TextColor="DarkTurquoise">
+                                                            </Label>
+                                                        </StackLayout>
+                                                        <StackLayout
+                                            Grid.Row="6">
+                                                            <Label
+               
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="{Binding Segundo}"
+                    TextColor="Black">
+                                            </Label>
+                                        </StackLayout>
+                                        <StackLayout
+                                            Grid.Row="7">
+                                                                    <Label
+               
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="Postre"
+                     TextColor="DarkTurquoise">
+                                                                    </Label>
+                                                                </StackLayout>
+                                                                <StackLayout
+                                            Grid.Row="8">
+                                                                    <Label
+               
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="{Binding Postre}"
+                    TextColor="Black">
+
+
+
+
+                                                                    </Label>
+                                        </StackLayout>
+                                        <StackLayout
+                                                Grid.Row="9">
+                                            <Label
+               
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="Dieta"
+                     TextColor="DarkTurquoise">
+                                            </Label>
+                                        </StackLayout>
+                                        <StackLayout
+                                                Grid.Row="10">
+                                            <Label
+               
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                   Text="{Binding Dieta}"
+                    TextColor="Black">
+                                            </Label>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

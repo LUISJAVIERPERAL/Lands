@@ -1,0 +1,1432 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.CalendarioPage"
+    BindingContext="{Binding Main , Source={StaticResource Locator}}"
+    Icon="ico_calendario"
+    Title="Calendario">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+          
+            <Style x:Key="negrolabel" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#ddd"/>
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BorderRadius" Value="0"/>
+                <Setter Property="FontSize" Value="5" />
+            </Style>
+            <Style x:Key="naranjalabel" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#E8AD00"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderRadius" Value="0"/>
+                <Setter Property="FontSize" Value="5" />
+     
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+          <StackLayout
+              Spacing="0"
+               Padding="0,0,0,0"
+                BindingContext="{Binding Calendario}"
+                Orientation="Vertical">
+              
+                <StackLayout
+                    Margin="1"
+                    BackgroundColor="LightGray">
+                    <Label
+                    BackgroundColor="LightGray"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="{Binding HijoActual}"
+                    TextColor="Gray">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+
+                        </Label>
+                </StackLayout>
+
+                <StackLayout
+                    Margin="5,2,5,0"
+                    Padding="0,0,0,0"
+                    BackgroundColor="Gray">
+                    <StackLayout
+                          BackgroundColor="White"
+                          Margin="1,1,1,1">
+                        <Grid>
+                           <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                   Grid.Column="0"
+                                  BorderColor="LightGray"
+                               
+                                  BackgroundColor="White"
+                                  Command="{Binding AnteriorCommand}"
+                                  HorizontalOptions="Start"
+                                  Margin="0,0,0,0"
+                                  Image="ico_izquierdo"
+                                  TextColor="Black">
+                                  
+                                </Button>
+
+                            <Button
+                        Margin="0,0,0,0"
+           
+                               Grid.Column="1"
+                               HorizontalOptions="FillAndExpand"
+                                
+                               
+                            
+                               BackgroundColor="White"
+                               TextColor="Black"
+                               Text="{Binding GrillaActual.NombreMesactual, Mode=TwoWay}"
+                               FontSize="Medium"
+                               FontAttributes="Bold">
+                            </Button>
+                              
+                                <Button
+                            Margin="0,0,0,0"
+                          
+                               Grid.Column="2"
+                            
+                               BackgroundColor="White"
+                               Command="{Binding SiguienteCommand}"
+                               HorizontalOptions="End"
+                               Image="ico_derecho"
+                               TextColor="Black">
+                                
+                                </Button>
+
+                            
+                        </Grid>
+
+
+                    </StackLayout>
+                </StackLayout>
+              
+              <StackLayout
+                  Margin="5,0,5,0"
+                  Padding="0,0,0,0"
+                    BackgroundColor="Gray">
+                    <StackLayout
+                          BackgroundColor="White"
+                          Margin="1,0,1,1">
+                        <Grid
+                      
+                        BackgroundColor="White">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <Label 
+              
+                       Grid.Column="0"
+                       BackgroundColor="White"
+                       TextColor="LightGray"   
+                       Text="Lun"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+
+                                </Label>
+                            
+                            <Label
+               
+                        Grid.Column="1"
+                          HorizontalTextAlignment="Center"
+                        BackgroundColor="White"
+                        TextColor="LightGray"
+                        Text="Mar"
+                        VerticalOptions="Center">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+
+                                </Label>
+                            <Label
+                 
+                        Grid.Column="2"
+                          HorizontalTextAlignment="Center"
+                        BackgroundColor="White"
+                        TextColor="LightGray"
+                        Text="Mie"
+                        VerticalOptions="Center">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+
+                                </Label>
+                            <Label
+               
+                        Grid.Column="3"
+                          HorizontalTextAlignment="Center"
+                        BackgroundColor="White"
+                        TextColor="LightGray"
+                        Text="Jue"
+                        VerticalOptions="Center">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+
+                                </Label>
+                            
+                            <Label
+                
+                        Grid.Column="4"
+                          HorizontalTextAlignment="Center"
+                        BackgroundColor="White"
+                        TextColor="LightGray"
+                        Text="Vie"
+                        VerticalOptions="Center">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+
+                                </Label>
+                            <Label
+               
+                        Grid.Column="5"
+                          HorizontalTextAlignment="Center"
+                        BackgroundColor="White"
+                        TextColor="LightGray"
+                        Text="Sab"
+                        VerticalOptions="Center">
+                            </Label>
+                            <Label
+            
+                        Grid.Column="6"
+                          HorizontalTextAlignment="Center"
+                        BackgroundColor="White"
+                        TextColor="LightGray"
+                        Text="Dom"
+                        VerticalOptions="Center">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+
+                                </Label>
+                        </Grid>
+
+                    </StackLayout>
+</StackLayout>
+
+                <StackLayout
+                  Margin="5,0,5,0"
+                  Padding="0,0,0,0"
+                    BackgroundColor="Gray">
+                    <StackLayout
+                          BackgroundColor="White"
+                          Margin="1,0,1,0"
+                        Spacing="0"
+                        Padding="0,0,0,0">
+                        
+                        <Grid
+                            RowSpacing="0"    
+                            ColumnSpacing="0"
+                      Padding ="0"
+                 
+                        BackgroundColor="White">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <Button  
+                             Margin="0,0,0,0"
+                              
+                            Text="{Binding GrillaActual.Grilla1.Fecha, Mode=TwoWay}"  Grid.Column="0"
+                            Image="{Binding GrillaActual.Grilla1.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             BackgroundColor="{Binding GrillaActual.Grilla1.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla1.Colorfont, Mode=TwoWay}" 
+                       
+                        
+                                
+                             IsEnabled="{Binding GrillaActual.Grilla1.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla1.Activo, Mode=OneWay}"
+                        
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="1"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla1.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla2.Fecha, Mode=TwoWay}"  Grid.Column="1"
+                              Image="{Binding GrillaActual.Grilla2.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla2.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla2.Colorfont, Mode=TwoWay}" 
+                         
+                      
+                       
+                            IsEnabled="{Binding GrillaActual.Grilla2.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla2.Activo, Mode=OneWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="2"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             
+                             FontSize="{Binding GrillaActual.Grilla2.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla3.Fecha, Mode=TwoWay}"  Grid.Column="2"
+                             Image="{Binding GrillaActual.Grilla3.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla3.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla3.Colorfont, Mode=TwoWay}" 
+                       
+                     
+                              IsEnabled="{Binding GrillaActual.Grilla3.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla3.Activo, Mode=OneWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="3"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla3.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla4.Fecha, Mode=TwoWay}"  Grid.Column="3"
+                             Image="{Binding GrillaActual.Grilla4.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla4.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla4.Colorfont, Mode=TwoWay}" 
+              
+                           
+                         
+                              IsEnabled="{Binding GrillaActual.Grilla4.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla4.Activo, Mode=OneWay}"
+                             
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="4"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla4.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla5.Fecha, Mode=TwoWay}"  Grid.Column="4"
+                             Image="{Binding GrillaActual.Grilla5.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla5.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla5.Colorfont, Mode=TwoWay}" 
+             
+                
+                        
+                               IsEnabled="{Binding GrillaActual.Grilla5.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla5.Activo, Mode=OneWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="5"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla5.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla6.Fecha, Mode=TwoWay}"  Grid.Column="5"
+                             Image="{Binding GrillaActual.Grilla6.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla6.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla6.Colorfont, Mode=TwoWay}" 
+                 
+                 
+                           
+                               IsEnabled="{Binding GrillaActual.Grilla6.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla6.Activo, Mode=OneWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="6"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla6.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla7.Fecha, Mode=TwoWay}"  Grid.Column="6"
+                                 Image="{Binding GrillaActual.Grilla7.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                            BackgroundColor="{Binding GrillaActual.Grilla7.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla7.Colorfont, Mode=TwoWay}" 
+        
+             
+                               IsEnabled="{Binding GrillaActual.Grilla7.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla7.Activo, Mode=OneWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="7"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla7.Taman, Mode=TwoWay}" />
+
+
+
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout
+                  Margin="5,0,5,0"
+                  Padding="0,0,0,0"
+                    BackgroundColor="Gray">
+                    <StackLayout
+                          BackgroundColor="White"
+                          Margin="1,0,1,0">
+                        <Grid
+                                ColumnSpacing="0"
+                      Padding ="0"
+                 
+                        BackgroundColor="White">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+
+
+
+
+                            <Button  Text="{Binding GrillaActual.Grilla8.Fecha, Mode=TwoWay}" Grid.Column="0"
+                        Image="{Binding GrillaActual.Grilla8.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla8.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla8.Colorfont, Mode=TwoWay}" 
+                          
+                             IsEnabled="{Binding GrillaActual.Grilla8.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="8"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla8.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla9.Fecha, Mode=TwoWay}"  Grid.Column="1"
+                            Image="{Binding GrillaActual.Grilla9.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla9.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla9.Colorfont, Mode=TwoWay}" 
+                            
+                             IsEnabled="{Binding GrillaActual.Grilla9.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="9"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla9.Taman, Mode=TwoWay}" />
+
+
+                            <Button  Text="{Binding GrillaActual.Grilla10.Fecha, Mode=TwoWay}"  Grid.Column="2"
+                            Image="{Binding GrillaActual.Grilla10.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla10.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla10.Colorfont, Mode=TwoWay}" 
+                           
+                             IsEnabled="{Binding GrillaActual.Grilla10.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="10"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla10.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla11.Fecha, Mode=TwoWay}"  Grid.Column="3"
+                               Image="{Binding GrillaActual.Grilla11.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla11.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla11.Colorfont, Mode=TwoWay}" 
+                           
+                             IsEnabled="{Binding GrillaActual.Grilla11.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="11"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla11.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla12.Fecha, Mode=TwoWay}" Grid.Column="4"
+                                Image="{Binding GrillaActual.Grilla12.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                           
+                             
+                            BackgroundColor="{Binding GrillaActual.Grilla12.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla12.Colorfont, Mode=TwoWay}" 
+                            
+                             IsEnabled="{Binding GrillaActual.Grilla12.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="12"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla12.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla13.Fecha, Mode=TwoWay}"  Grid.Column="5"
+                             Image="{Binding GrillaActual.Grilla13.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla13.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla13.Colorfont, Mode=TwoWay}" 
+                            
+                             IsEnabled="{Binding GrillaActual.Grilla13.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="13"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla13.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla14.Fecha, Mode=TwoWay}"  Grid.Column="6"
+                              Image="{Binding GrillaActual.Grilla14.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla14.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla14.Colorfont, Mode=TwoWay}" 
+                             
+                             IsEnabled="{Binding GrillaActual.Grilla14.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="14"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla14.Taman, Mode=TwoWay}" />
+
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout
+                  Margin="5,0,5,0"
+                  Padding="0,0,0,0"
+                    BackgroundColor="Gray">
+                    <StackLayout
+                          BackgroundColor="White"
+                          Margin="1,0,1,0">
+                        <Grid
+                                ColumnSpacing="0"
+                      Padding ="0"
+                 
+                        BackgroundColor="White">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Button  
+                                Margin="0,0,0,0"
+                                
+                                Text="{Binding GrillaActual.Grilla15.Fecha, Mode=TwoWay}"  Grid.Column="0"
+                             
+                                     Image="{Binding GrillaActual.Grilla15.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                          
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla15.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla15.Colorfont, Mode=TwoWay}" 
+                          
+                             IsEnabled="{Binding GrillaActual.Grilla15.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="15"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla15.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla16.Fecha, Mode=TwoWay}"  Grid.Column="1"
+                             Image="{Binding GrillaActual.Grilla16.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla16.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla16.Colorfont, Mode=TwoWay}" 
+                          
+                             IsEnabled="{Binding GrillaActual.Grilla16.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="16"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla16.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla17.Fecha, Mode=TwoWay}"  Grid.Column="2"
+                       Image="{Binding GrillaActual.Grilla17.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla17.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla17.Colorfont, Mode=TwoWay}" 
+                            
+                             IsEnabled="{Binding GrillaActual.Grilla17.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="17"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla17.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla18.Fecha, Mode=TwoWay}"  Grid.Column="3"
+                          Image="{Binding GrillaActual.Grilla18.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla18.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla18.Colorfont, Mode=TwoWay}" 
+                           
+                             IsEnabled="{Binding GrillaActual.Grilla18.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="18"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla18.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla19.Fecha, Mode=TwoWay}"  Grid.Column="4"
+                              Image="{Binding GrillaActual.Grilla19.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla19.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla19.Colorfont, Mode=TwoWay}" 
+                             
+                             IsEnabled="{Binding GrillaActual.Grilla19.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="19"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla19.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla20.Fecha, Mode=TwoWay}"  Grid.Column="5"
+                             Image="{Binding GrillaActual.Grilla20.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla20.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla20.Colorfont, Mode=TwoWay}" 
+                            
+                             IsEnabled="{Binding GrillaActual.Grilla20.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="20"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla20.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla21.Fecha, Mode=TwoWay}"  Grid.Column="6"
+                       Image="{Binding GrillaActual.Grilla21.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla21.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla21.Colorfont, Mode=TwoWay}" 
+                            
+                             IsEnabled="{Binding GrillaActual.Grilla21.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="21"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+
+                             FontSize="{Binding GrillaActual.Grilla21.Taman, Mode=TwoWay}" />
+
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout
+                  Margin="5,0,5,0"
+                  Padding="0,0,0,0"
+                    BackgroundColor="Gray">
+                    <StackLayout
+                          BackgroundColor="White"
+                          Margin="1,0,1,0">
+                        <Grid
+                            ColumnSpacing="0"
+                      Padding ="0"
+                        BackgroundColor="White">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <Button  Text="{Binding GrillaActual.Grilla22.Fecha, Mode=TwoWay}"  Grid.Column="0"
+                               Image="{Binding GrillaActual.Grilla22.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla22.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla22.Colorfont, Mode=TwoWay}" 
+                           
+                             IsEnabled="{Binding GrillaActual.Grilla22.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="22"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla22.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla23.Fecha, Mode=TwoWay}"  Grid.Column="1"
+                            Image="{Binding GrillaActual.Grilla23.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla23.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla23.Colorfont, Mode=TwoWay}" 
+                             
+                             IsEnabled="{Binding GrillaActual.Grilla23.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="23"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla23.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla24.Fecha, Mode=TwoWay}"  Grid.Column="2"
+                               Image="{Binding GrillaActual.Grilla24.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla24.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla24.Colorfont, Mode=TwoWay}" 
+                           
+                             IsEnabled="{Binding GrillaActual.Grilla24.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="24"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla24.Taman, Mode=TwoWay}" />
+
+
+                            <Button  Text="{Binding GrillaActual.Grilla25.Fecha, Mode=TwoWay}"  Grid.Column="3"
+                      Image="{Binding GrillaActual.Grilla25.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla25.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla25.Colorfont, Mode=TwoWay}" 
+                            
+                             IsEnabled="{Binding GrillaActual.Grilla25.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="25"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla25.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla26.Fecha, Mode=TwoWay}"  Grid.Column="4"
+                       Image="{Binding GrillaActual.Grilla26.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla26.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla26.Colorfont, Mode=TwoWay}" 
+                             
+                             IsEnabled="{Binding GrillaActual.Grilla26.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="26"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla26.Taman, Mode=TwoWay}" />
+
+
+                            <Button  Text="{Binding GrillaActual.Grilla27.Fecha, Mode=TwoWay}"  Grid.Column="5"
+                       Image="{Binding GrillaActual.Grilla27.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla27.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla27.Colorfont, Mode=TwoWay}" 
+                            
+                             IsEnabled="{Binding GrillaActual.Grilla27.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="27"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla27.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla28.Fecha, Mode=TwoWay}"  Grid.Column="6"
+                        Image="{Binding GrillaActual.Grilla28.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla28.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla28.Colorfont, Mode=TwoWay}" 
+                            
+                             IsEnabled="{Binding GrillaActual.Grilla28.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="28"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla28.Taman, Mode=TwoWay}" />
+
+
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout
+                  Margin="5,0,5,0"
+                  Padding="0,0,0,0"
+                    
+                    BackgroundColor="Gray">
+                    <StackLayout
+                          BackgroundColor="White"
+                          Margin="1,0,1,0">
+                        <Grid
+                      Padding="0"
+                            ColumnSpacing="0"
+                        BackgroundColor="White">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <Button  Text="{Binding GrillaActual.Grilla29.Fecha, Mode=TwoWay}" Grid.Column="0"
+                       Image="{Binding GrillaActual.Grilla29.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla29.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla29.Colorfont, Mode=TwoWay}" 
+                          
+                             IsEnabled="{Binding GrillaActual.Grilla29.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="29"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla29.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla30.Fecha, Mode=TwoWay}" Grid.Column="1"
+                              Image="{Binding GrillaActual.Grilla30.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla30.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla30.Colorfont, Mode=TwoWay}" 
+                          
+                             IsEnabled="{Binding GrillaActual.Grilla30.Activo, Mode=TwoWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="30"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla30.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla31.Fecha, Mode=TwoWay}"  Grid.Column="2"
+                      Image="{Binding GrillaActual.Grilla31.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla31.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla31.Colorfont, Mode=TwoWay}" 
+                    
+                               IsEnabled="{Binding GrillaActual.Grilla31.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla31.Activo, Mode=OneWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="31"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla31.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla32.Fecha, Mode=TwoWay}"  Grid.Column="3"
+                        Image="{Binding GrillaActual.Grilla32.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla32.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla32.Colorfont, Mode=TwoWay}" 
+                         
+                               IsEnabled="{Binding GrillaActual.Grilla32.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla32.Activo, Mode=OneWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="32"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla32.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla33.Fecha, Mode=TwoWay}"  Grid.Column="4"
+                      Image="{Binding GrillaActual.Grilla33.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla33.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla33.Colorfont, Mode=TwoWay}" 
+                           
+                               IsEnabled="{Binding GrillaActual.Grilla33.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla33.Activo, Mode=OneWay}"
+                             
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="33"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla33.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla34.Fecha, Mode=TwoWay}"  Grid.Column="5"
+                              Image="{Binding GrillaActual.Grilla34.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla34.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla34.Colorfont, Mode=TwoWay}" 
+                        
+                               IsEnabled="{Binding GrillaActual.Grilla34.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla34.Activo, Mode=OneWay}"
+                             
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="34"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla34.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla35.Fecha, Mode=TwoWay}"  Grid.Column="6"
+                        Image="{Binding GrillaActual.Grilla35.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla35.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla35.Colorfont, Mode=TwoWay}" 
+                               IsEnabled="{Binding GrillaActual.Grilla35.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla35.Activo, Mode=OneWay}"
+                             
+                             
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="35"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla35.Taman, Mode=TwoWay}" />
+
+
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout
+                  Margin="5,0,5,0"
+                  Padding="0,0,0,0"
+                    BackgroundColor="Gray">
+                    <StackLayout
+                          BackgroundColor="White"
+                          Margin="1,0,1,1">
+                        <Grid
+                            ColumnSpacing="0"
+                      Padding = "0"
+                        BackgroundColor="White">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Button  Text="{Binding GrillaActual.Grilla36.Fecha, Mode=TwoWay}"  Grid.Column="0"
+                       Image="{Binding GrillaActual.Grilla36.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla36.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla36.Colorfont, Mode=TwoWay}" 
+                                IsEnabled="{Binding GrillaActual.Grilla36.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla36.Activo, Mode=OneWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="36"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla36.Taman, Mode=TwoWay}" />
+                            <Button  Text="{Binding GrillaActual.Grilla37.Fecha, Mode=TwoWay}" Grid.Column="1"
+                            Image="{Binding GrillaActual.Grilla37.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla37.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla37.Colorfont, Mode=TwoWay}" 
+                         
+                               IsEnabled="{Binding GrillaActual.Grilla37.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla37.Activo, Mode=OneWay}"
+            
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="37"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla37.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla38.Fecha, Mode=TwoWay}"  Grid.Column="2"
+                          Image="{Binding GrillaActual.Grilla38.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla38.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla38.Colorfont, Mode=TwoWay}" 
+                            
+                           IsEnabled="{Binding GrillaActual.Grilla38.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla38.Activo, Mode=OneWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="38"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla38.Taman, Mode=TwoWay}" />
+                            <Button  Text="{Binding GrillaActual.Grilla39.Fecha, Mode=TwoWay}"  Grid.Column="3"
+                            Image="{Binding GrillaActual.Grilla39.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla39.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla39.Colorfont, Mode=TwoWay}" 
+                              IsEnabled="{Binding GrillaActual.Grilla39.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla39.Activo, Mode=OneWay}"
+                             
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="39"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla39.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla40.Fecha, Mode=TwoWay}"  Grid.Column="4"
+                           Image="{Binding GrillaActual.Grilla40.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla40.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla40.Colorfont, Mode=TwoWay}" 
+                               IsEnabled="{Binding GrillaActual.Grilla40.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla40.Activo, Mode=OneWay}"
+                             
+                             
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="40"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla40.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla41.Fecha, Mode=TwoWay}"  Grid.Column="5"
+                              Image="{Binding GrillaActual.Grilla41.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla41.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla41.Colorfont, Mode=TwoWay}" 
+                                IsEnabled="{Binding GrillaActual.Grilla41.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla41.Activo, Mode=OneWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="41"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla41.Taman, Mode=TwoWay}" />
+
+                            <Button  Text="{Binding GrillaActual.Grilla42.Fecha, Mode=TwoWay}"  Grid.Column="6"
+                              Image="{Binding GrillaActual.Grilla42.Icono, Mode=TwoWay}"
+                             ContentLayout="Bottom"
+                             
+                             BackgroundColor="{Binding GrillaActual.Grilla42.Color, Mode=TwoWay}"
+                             TextColor="{Binding Grillaactual.Grilla42.Colorfont, Mode=TwoWay}" 
+                                  IsEnabled="{Binding GrillaActual.Grilla42.Activo, Mode=OneWay}"
+                             IsVisible="{Binding GrillaActual.Grilla42.Activo, Mode=OneWay}"
+                             Command="{Binding PulsadoCommand}"
+                             CommandParameter="42"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             FontSize="{Binding GrillaActual.Grilla42.Taman, Mode=TwoWay}" />
+
+                        </Grid>
+                    </StackLayout>
+</StackLayout>
+             </StackLayout>
+                <StackLayout>
+                <ListView 
+                HeightRequest="400"
+                BackgroundColor="Silver"
+                HasUnevenRows="true"
+                IsPullToRefreshEnabled="true"
+                ItemsSource="{Binding Serviciosmes2 , Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                  <DataTemplate>
+                  <ViewCell
+                    Height="200">
+                  <Frame
+                     BackgroundColor="WhiteSmoke"     
+                     Margin="0,0,0,0"
+                     Padding="0,0,0,0">
+                  <Frame.GestureRecognizers>
+                  <TapGestureRecognizer Command="{Binding SelectServicioCommand}"/>
+                  </Frame.GestureRecognizers>
+                    <StackLayout>
+                      <StackLayout
+                           Margin="0,0,0,0"     
+                           Padding="0,0,0,0"
+                           IsVisible ="{Binding veraccesos}">
+                                <Grid
+                                  Margin=" 0,0,10,0"
+                                  Padding="0,0,0,0"
+                                  RowSpacing="0"
+                                  ColumnSpacing="0">
+                                <Grid.RowDefinitions>
+                                 <RowDefinition Height="*"/>
+                                 <RowDefinition Height="*"/>
+                                 <RowDefinition Height="2*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                 <ColumnDefinition Width="12*"/>
+                                 <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                     <Label 
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        HorizontalOptions ="Center"
+                                        VerticalOptions ="Center"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment ="Center"       
+                                        BackgroundColor="WhiteSmoke"   
+                                        FontSize="Medium"
+                                        Text="{Binding Nombreservicio}"
+                                        TextColor="Black">
+                                        <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                         <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                        </OnPlatform>
+                                        </Label.FontFamily>
+                                      </Label>
+                                      <Label 
+                                          Grid.Row="1"
+                                          Grid.Column="0"
+                                          HorizontalOptions ="Center"
+                                          VerticalOptions ="Center"
+                                          HorizontalTextAlignment="Center"
+                                          VerticalTextAlignment ="Center"       
+                                          BackgroundColor="WhiteSmoke"   
+                                          FontSize="Medium"
+                                          Text="{Binding Descriacceso}"
+                                          TextColor="{Binding Coloracceso}">
+                                          <Label.FontFamily>
+                                          <OnPlatform x:TypeArguments="x:String">
+                                             <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                          </OnPlatform>
+                                          </Label.FontFamily>
+                                       </Label>
+                                       <Image 
+                                          Grid.Row="1"
+                                          Grid.Column="1"
+                                          HorizontalOptions="End"
+                                          Source="ic_chevron_right">
+                                       </Image>
+
+                                       <StackLayout
+                                          Grid.Row="2"
+                                          Grid.Column="0"
+                                          IsVisible="{Binding notieneacesso}">
+                                       </StackLayout>
+                                       <StackLayout
+                                          Grid.Row="2"
+                                          Grid.Column="0"   
+                                          IsVisible="{Binding tieneacesso}">
+                                          <StackLayout
+                                             IsVisible="{Binding sinmenu}"
+                                             BackgroundColor="White">
+                                             <Label
+                                                HorizontalTextAlignment="Center"
+                                                FontAttributes="Bold"
+                                                FontSize="Default"
+                                                Text="SERVICIO SIN MENU"
+                                                TextColor="LightGray">
+                                             </Label>
+                                           </StackLayout>
+                                           <StackLayout
+                                                IsVisible="{Binding conmenu}"
+                                                BackgroundColor="WhiteSmoke">
+                                                            <StackLayout
+                                                                HorizontalOptions="Center"
+                                                    Orientation="Horizontal">
+                                                            
+                                                 <Image
+                                                     BackgroundColor ="Transparent"                                                         
+                                                     HorizontalOptions="Center"
+                                                     Source="{Binding Iconoestrella1}">
+                                                 </Image>
+                                                 <Image
+                                                     BackgroundColor ="Transparent"                                                         
+                                                     HorizontalOptions="Center"
+                                                     Source="{Binding Iconoestrella2}">
+                                                 </Image>
+                                                 <Image
+                                                     BackgroundColor ="Transparent"                                                         
+                                                     HorizontalOptions="Center"
+                                                     Source="{Binding Iconoestrella3}">
+                                                 </Image>
+
+                                                 <Image
+                                                     BackgroundColor ="Transparent"                                                         
+                                                     HorizontalOptions="Center"
+                                                     Source="{Binding Iconoestrella4}">
+                                                 </Image>
+
+
+                                                            </StackLayout>
+                                           </StackLayout>
+                                          </StackLayout>
+                                      </Grid>
+                              </StackLayout>
+                                            <StackLayout
+                                              Margin="0,0,0,0"     
+                                            Padding="0,0,0,0"  
+    IsVisible ="{Binding verasistencia}">
+                                                <Label 
+                                                   BackgroundColor="WhiteSmoke"   
+                                                   HorizontalOptions ="Center"
+                                                   VerticalOptions ="Center"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment ="Center"       
+                                                   FontSize="Medium"
+                                                   Text="{Binding Nombreservicio}"
+                                                   TextColor="Black">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+
+                                                </Label>
+                                                <StackLayout
+                                                    IsVisible="{Binding notieneacesso}">
+                                                       <StackLayout
+                                        
+                                                          Margin="30,2,30,2"
+                                                          BackgroundColor="WhiteSmoke"   >
+                                                     
+                                                        <StackLayout
+                                                            IsVisible = "{Binding modelo2}"
+                                                            BackgroundColor="WhiteSmoke">
+                                                            <Grid
+                                                               
+                                                                Margin=" 0,0,0,0"
+                                                                Padding="0,0,0,0">
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="*"/>
+                                                                    <RowDefinition Height="*"/>
+
+                                                                </Grid.RowDefinitions>
+
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="3*"/>
+                                                                    <ColumnDefinition Width="3*"/>
+                                                                    <ColumnDefinition Width="*"/>
+                                                                </Grid.ColumnDefinitions>
+
+
+                                                                <Label 
+                                                         Grid.Row="0"
+                                                         Grid.Column="0"
+                                                         Margin="0,0,0,0"
+                                                         HorizontalOptions="StartAndExpand"
+                                                         HorizontalTextAlignment="Center"
+                                                         VerticalTextAlignment ="Center"       
+                                                         FontSize="Default"
+                                                         TextColor="{Binding colorasistencia}"         
+                                                         Text="{Binding Iconoasistencia, Mode=TwoWay}" 
+                                                        BackgroundColor="WhiteSmoke">
+                                                                    <Label.FontFamily>
+                                                                        <OnPlatform x:TypeArguments="x:String">
+                                                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                                        </OnPlatform>
+                                                                    </Label.FontFamily>
+                                                                </Label>
+                                                                <Label 
+                                                                IsVisible="{Binding conmenu, Mode=TwoWay}"
+                                                                Grid.Row="0"
+                                                                Grid.Column="1"
+                                                                Margin="0,0,0,0"
+                                                                HorizontalOptions="StartAndExpand"
+                                                                HorizontalTextAlignment="Center"
+                                                                VerticalTextAlignment ="Center"       
+                                                                FontSize="Default"
+                                                                Text="{Binding Iconodieta, Mode=TwoWay}" 
+                                                                BackgroundColor="WhiteSmoke"   
+                                                                TextColor="Gray">
+                                                                    <Label.FontFamily>
+                                                                        <OnPlatform x:TypeArguments="x:String">
+                                                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                                        </OnPlatform>
+                                                                    </Label.FontFamily>
+                                                                </Label>
+                                                                <Button  
+                                                                  Image="{Binding botonasistencia}"
+                                                                   BackgroundColor="Transparent"
+                                                                  Grid.Row="1"
+                                                                  Grid.Column="0"
+                                                                  Command="{Binding CambiarCommand}"
+                                                                  CommandParameter="6"/>
+                                                          
+                                                                <Button       
+                                                                    Image="{Binding botondieta}"
+                                                                    BackgroundColor="Transparent"
+                                                                    IsVisible="{Binding conmenu}"
+                                                                    IsEnabled="{Binding conmenu}"
+                                                                    Grid.Row="1"
+                                                                    Grid.Column="1"
+                                                                    Command="{Binding CambiarCommand}"
+                                                                    CommandParameter="4"/>
+                                                          
+                                                                <Image 
+                                                                    Grid.Row="1"
+                                                                    Grid.Column="2"
+                                                                    Source="ic_chevron_right">
+                                                                    
+                                                                </Image>
+
+                                                            </Grid>
+
+
+                                                        </StackLayout>
+                                                        <StackLayout
+                                                            IsVisible = "{Binding modelo1}"
+                                                            BackgroundColor="WhiteSmoke">
+                                                            <Grid
+                                                               
+                                                                Margin=" 0,0,0,0"
+                                                                Padding="0,0,0,0">
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="*"/>
+                                                                    <RowDefinition Height="*"/>
+
+                                                                </Grid.RowDefinitions>
+
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="3*"/>
+                                                                    <ColumnDefinition Width="3*"/>
+                                                                    <ColumnDefinition Width="*"/>
+                                                                </Grid.ColumnDefinitions>
+
+
+                                                                <Label 
+                                                         Grid.Row="0"
+                                                         Grid.Column="0"
+                                                         Margin="0,0,0,0"
+                                                         HorizontalOptions="StartAndExpand"
+                                                         HorizontalTextAlignment="Center"
+                                                         VerticalTextAlignment ="Center"       
+                                                         FontSize="Default"
+                                                         TextColor="{Binding colorausencia}"         
+                                                         Text="{Binding Iconoausencia, Mode=TwoWay}" 
+                                                        BackgroundColor="WhiteSmoke">
+                                                                    <Label.FontFamily>
+                                                                        <OnPlatform x:TypeArguments="x:String">
+                                                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                                        </OnPlatform>
+                                                                    </Label.FontFamily>
+                                                                </Label>
+                                                                <Label 
+                                                                IsVisible="{Binding conmenu, Mode=TwoWay}"
+                                                                Grid.Row="0"
+                                                                Grid.Column="1"
+                                                                Margin="0,0,0,0"
+                                                                HorizontalOptions="StartAndExpand"
+                                                                HorizontalTextAlignment="Center"
+                                                                VerticalTextAlignment ="Center"       
+                                                                FontSize="Default"
+                                                                Text="{Binding Iconodieta, Mode=TwoWay}" 
+                                                                BackgroundColor="WhiteSmoke"   
+                                                                TextColor="Gray">
+                                                                    <Label.FontFamily>
+                                                                        <OnPlatform x:TypeArguments="x:String">
+                                                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                                        </OnPlatform>
+                                                                    </Label.FontFamily>
+                                                                </Label>
+                                                                <Button  
+                                                                  Image="{Binding botonausencia}"
+                                                                
+                                                                  BackgroundColor="Transparent"
+                                                                  Grid.Row="1"
+                                                                  Grid.Column="0"
+                                                                  Command="{Binding CambiarCommand}"
+                                                                  CommandParameter="6"/>
+                                                                <Button 
+                                                            
+                                                                    Image="{Binding botondieta}"
+                                                                    BackgroundColor="Transparent"
+                                                                    IsVisible="{Binding conmenu}"
+                                                                    IsEnabled="{Binding conmenu}"
+                                                                    Grid.Row="1"
+                                                                    Grid.Column="1"
+                                                                    Command="{Binding CambiarCommand}"
+                                                                    CommandParameter="4"/>
+                                                           
+                                                                <Image 
+                                                                    Grid.Row="1"
+                                                                    Grid.Column="2"
+                                                                    Source="ic_chevron_right">
+
+                                                                </Image>
+
+                                                            </Grid>
+
+
+                                                        </StackLayout>
+
+
+
+
+
+
+
+                                                    </StackLayout>
+
+
+
+
+                                                   
+                                                </StackLayout>
+
+                                                <StackLayout
+      IsVisible="{Binding tieneacesso}">
+
+                                                    <StackLayout
+                                           
+                                                Margin="30,2,30,2"
+                                                BackgroundColor="White">
+
+                                                    </StackLayout>
+
+
+                                                </StackLayout>
+                                            </StackLayout>
+
+                                            </StackLayout>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+
+
+
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

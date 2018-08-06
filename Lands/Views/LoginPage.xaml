@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.LoginPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        
+        <ScrollView
+            BindingContext="{Binding Login}">
+          
+            
+            <StackLayout
+               BackgroundColor="White"
+              Margin="5,0"
+                
+                Padding="5">
+              
+                    <Image
+                    Source="iconos"
+                    WidthRequest="350">
+                </Image>
+
+                <StackLayout
+                    Spacing="5"
+              Margin="10,0,0,0"
+                
+                Padding="10">
+
+                    <Label
+                        Text="{i18n:Translate Centro}"
+                        FontSize="Medium"
+                        VerticalOptions="Start"
+                        TextColor="Black">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                            </OnPlatform>
+
+                        </Label.FontFamily>
+                    </Label>
+                    <Entry
+                        FontSize="Medium"
+                        Keyboard="Email"
+                        Text="{Binding Centro, Mode=TwoWay}"
+                        Placeholder="{i18n:Translate CentroPlaceHolder}">
+                    </Entry>
+                    <Label
+                        Text="{i18n:Translate EMail}"
+                        FontSize="Medium"
+                        VerticalOptions="Start"
+                        TextColor="Black">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                            </OnPlatform>
+
+                        </Label.FontFamily>
+                    </Label>
+                    <Entry
+                        FontSize="Medium"
+                        Keyboard="Email"
+                        Text="{Binding Email, Mode=TwoWay}"
+                        Placeholder="{i18n:Translate EmailPlaceHolder}">
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                            </OnPlatform>
+
+                        </Entry.FontFamily>
+                    </Entry>
+                    <Label
+                        FontSize="Medium"
+                        Text="{i18n:Translate Password}"
+                        VerticalOptions="Start"
+                        TextColor="Black">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                            </OnPlatform>
+
+                        </Label.FontFamily>
+                    </Label>
+                    <Entry
+                        FontSize="Medium"
+                        IsPassword="true"
+                        Text="{Binding Password, Mode=TwoWay}"
+                        Placeholder="{i18n:Translate PasswordPlaceHolder}">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                            </OnPlatform>
+
+                        </Label.FontFamily>
+                    </Entry>
+              
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand">
+                </ActivityIndicator>
+             
+                              
+                <StackLayout
+                    Margin="5,0"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                    <Button
+                        BackgroundColor="Blue"
+                      
+                        Command="{Binding LoginCommand}"
+                        HeightRequest="50"
+                   
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="{i18n:Translate Login}"
+                        FontSize="Medium"
+                        TextColor="White">
+                        
+                            <Button.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                                </OnPlatform>
+
+                            </Button.FontFamily>
+                        </Button>
+                 </StackLayout>
+               
+            </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

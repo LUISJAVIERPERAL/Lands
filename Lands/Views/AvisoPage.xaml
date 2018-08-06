@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.AvisoPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Icon="ic_action_language"
+   BackgroundColor="White"
+    Title="{Binding Mitoken.Nombre_comedor}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+            BindingContext="{Binding Aviso}">
+
+                <StackLayout
+                BackgroundColor="LightGray"
+                Orientation="Horizontal"
+                Padding="0,0,0,0">
+
+
+                    <Label
+                    Margin="5,0,0,0"
+                    FontSize="Large"
+        
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Text="MENSAJES"
+                    TextColor="Black">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                            </OnPlatform>
+
+                        </Label.FontFamily>
+                    </Label>
+                    <Image
+               HorizontalOptions="EndAndExpand"
+               Source="icoavisos">
+
+                    </Image>
+                </StackLayout>
+
+
+                <StackLayout 
+                                       
+                                        Padding="0,0,0,0"
+                                        Spacing="0"
+                                        >
+                    <StackLayout
+                                                    Spacing="0"
+                                            Margin="0,0,0,0"
+                                            Padding="0,0,0,0"
+                                        Orientation ="Horizontal">
+                        <Label
+                                         IsVisible="{Binding hayavisos}" 
+                            Margin="15,0,0,0"  
+                                            HorizontalOptions="StartAndExpand"
+                                            FontAttributes="Bold"
+                                            FontSize="Medium" 
+                                            Text="MENSAJE"
+                                            TextColor="Black">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="Lato-Bold.ttf#Lato-Bold"/>
+
+
+                                </OnPlatform>
+
+                            </Label.FontFamily>
+                        </Label>
+                        <Label 
+                                        IsVisible="{Binding hayavisos}"
+                            Margin="0,0,15,0"
+                                         FontAttributes="Bold"
+                                              
+                                         HorizontalTextAlignment="End"
+                                            FontSize="Medium"
+                                            Text="{Binding Aviso.Fecha}"
+                                            TextColor="Black">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="Lato-Bold.ttf#Lato-Bold"/>
+
+
+                                </OnPlatform>
+
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
+
+                    <StackLayout
+                                            Margin="0,0,0,0"
+                                            Spacing="0"
+                                            Padding="0,0,0,0"
+                                              Orientation="Horizontal">
+                        <Grid
+                                                               
+                                                                Margin=" 0,0,0,0"
+                                                                Padding="0,0,0,0">
+
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+
+
+                            <Label 
+                                         IsVisible="{Binding hayavisos}"        
+                                         Grid.Column="0"      
+                                         Margin="15,0,0,0"
+                                                HorizontalOptions="Start"
+                                     HorizontalTextAlignment="Start"
+                                            FontSize="Default"
+                                            Text="Para: "
+                                            TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                                    </OnPlatform>
+
+                                </Label.FontFamily>
+                            </Label>
+
+
+                            <Label 
+                                    IsVisible="{Binding hayavisos}"
+                                Grid.Column="1"          
+                           
+                            HorizontalOptions="StartAndExpand"
+                                            FontSize="Small"
+                                            Text="{Binding Aviso.ParaAlumnos}"
+                                            TextColor="Black">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                                    </OnPlatform>
+
+                                </Label.FontFamily>
+                            </Label>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    BackgroundColor="LightGray">
+                    <StackLayout
+                        Margin="1,1,1,1"
+                        BackgroundColor="White">
+
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                                        Margin="15,5,15,5">
+
+                    <StackLayout 
+                                       
+                                        VerticalOptions="FillAndExpand">
+                        <Label 
+                                            Text="{Binding Aviso.Texto}"
+                                            TextColor="Black">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                                </OnPlatform>
+
+                            </Label.FontFamily>
+
+                        </Label>
+
+
+                    </StackLayout>
+
+
+
+                </StackLayout>
+
+                <StackLayout
+                    BackgroundColor="Gray">
+                    <StackLayout
+                        Margin="1,1,1,1"
+                        BackgroundColor="White">
+                        
+                    </StackLayout>
+                    
+                </StackLayout>
+                    
+                <StackLayout
+                HorizontalOptions="Center">
+                    <Button
+                        BackgroundColor="Blue"
+                      
+                        Command="{Binding Respuestacommand}"
+                        HeightRequest="50"
+                   
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="RESPONDER"
+                        TextColor="White">
+                    </Button>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

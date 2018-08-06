@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.RespuestaAvisoPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Icon="ic_action_language"
+   BackgroundColor="White"
+    Title="{Binding Mitoken.Nombre_comedor}">
+    <ContentPage.Content>
+
+        <StackLayout
+            BindingContext="{Binding Aviso}">
+
+            <StackLayout
+                BackgroundColor="LightGray"
+                Orientation="Horizontal"
+                Padding="0,0,0,0">
+
+
+                <Label
+                    Margin="5,0,0,0"
+                    FontSize="Large"
+        
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Text="MENSAJES"
+                    TextColor="Black">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                        </OnPlatform>
+
+                    </Label.FontFamily>
+                </Label>
+                <Image
+               HorizontalOptions="EndAndExpand"
+               Source="icoavisos">
+
+                </Image>
+            </StackLayout>
+            <StackLayout
+                Margin="10,10,10,10"
+              BackgroundColor="Gray">
+                <StackLayout 
+                    Margin="1,1,1,1"
+                   BackgroundColor="White" >
+                    <Editor
+                        
+                        HeightRequest="250"
+                        WidthRequest="50"
+                Text="{Binding Mirespuesta, Mode=TwoWay}">
+
+                    </Editor>
+
+                </StackLayout>
+                
+                
+            </StackLayout>
+
+            <StackLayout
+                HorizontalOptions="Center">
+                <Button
+                        BackgroundColor="Blue"
+                      
+                        Command="{Binding EnviarRespuestacommand}"
+                        HeightRequest="50"
+                   
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="ENVIAR"
+                        TextColor="White">
+                </Button>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+    
+    
+</ContentPage>

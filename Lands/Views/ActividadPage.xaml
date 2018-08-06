@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.ActividadPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Icon="ic_action_language"
+    Title="Informacion de la actividad">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Actividad}"
+            Padding="5">
+            <Label
+             
+                FontAttributes="Bold"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                Text="{Binding Actividad.Nombreactividad}"
+                TextColor="Black">
+            </Label>
+            <Label
+              
+            
+                HorizontalOptions="Center"
+                Text="Dias Actividad"
+                TextColor="Black">
+            </Label>
+            <Label
+                FontAttributes="Bold"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                Text="{Binding Actividad.Diassemana}"
+                TextColor="Black">
+            </Label>
+            <Label
+         
+           
+                HorizontalOptions="Center"
+                Text="Horarios"
+                TextColor="Black">
+            </Label>
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.8*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout
+                     Grid.Column="0">
+                    <Label
+           
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="  "
+                TextColor="Black">
+                    </Label>
+                    <Label
+           
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="Lunes ... "
+                TextColor="Black">
+                    </Label>
+                    <Label
+            
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="Martes ... "
+                TextColor="Black">
+                    </Label>
+                    <Label
+             
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="Miércoles ... "
+                TextColor="Black">
+                    </Label>
+                    <Label
+               
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="Juéves ... "
+                TextColor="Black">
+                    </Label>
+                    <Label
+               
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="Viernes ... "
+                TextColor="Black">
+                    </Label>
+                    <Label
+          
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="Sábado ... "
+                TextColor="Black">
+                    </Label>
+                    <Label
+             
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="Domingo ... "
+                TextColor="Black">
+                    </Label>
+                </StackLayout>
+                <StackLayout
+Grid.Column="1">
+                    <Label
+                       
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="Desde.."
+                TextColor="Black">
+                    </Label>
+
+                    <Label
+                       
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.LunDesde}"
+                TextColor="Black">
+                    </Label>
+                    
+                    
+                    
+                    <Label
+           
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.MarDesde}"
+                TextColor="Black">
+                    </Label>
+                    <Label
+             
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.MieDesde}"
+                TextColor="Black">
+                    </Label>
+                    <Label
+         
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.JueDesde}"
+                TextColor="Black">
+                    </Label>
+                    <Label
+               
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.VieDesde}"
+                TextColor="Black">
+                    </Label>
+                    <Label
+             
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.SabDesde}"
+                TextColor="Black">
+                    </Label>
+                    <Label
+         
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.DomDesde}"
+                TextColor="Black">
+                    </Label>
+                </StackLayout>
+
+                <StackLayout
+  Grid.Column="2">
+                    <Label
+             
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="Hasta.."
+                TextColor="Black">
+                    </Label>
+
+
+                    <Label
+             
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.LunHasta}"
+                TextColor="Black">
+                    </Label>
+                    <Label
+             
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.MarHasta}"
+                TextColor="Black">
+                    </Label>
+                    <Label
+              
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.MieHasta}"
+                TextColor="Black">
+                    </Label>
+                    <Label
+             
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.JueHasta}"
+                TextColor="Black">
+                    </Label>
+                    <Label
+           
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.VieHasta}"
+                TextColor="Black">
+                    </Label>
+                    <Label
+          
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.SabHasta}"
+                TextColor="Black">
+                    </Label>
+                    <Label
+           
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="{Binding Actividad.DomHasta}"
+                TextColor="Black">
+                    </Label>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

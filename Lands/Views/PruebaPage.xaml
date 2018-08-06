@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.PruebaPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+
+        <ScrollView
+            BindingContext="{Binding Prueba}">
+
+
+            <StackLayout
+              Margin="5,0"
+                
+                Padding="5">
+
+                <Image
+                    Source="iconos"
+                    WidthRequest="350">
+                </Image>
+
+                <StackLayout
+                    Spacing="1"
+              Margin="10,0,0,0"
+                
+                Padding="10">
+
+                    <Label
+                        Text="{i18n:Translate Centro}"
+                        VerticalOptions="Start"
+                        TextColor="Blue">
+                    </Label>
+                  
+                        <Switch
+                           
+                            IsToggled="{Binding IsRemembered , Mode=TwoWay}"
+                     
+                   
+                    
+                        HorizontalOptions="End">
+                          
+                        </Switch>
+          
+                    <Entry
+                        Keyboard="Email"
+                        Text="{Binding Centro, Mode=TwoWay}"
+                        Placeholder="{i18n:Translate CentroPlaceHolder}">
+                    </Entry>
+                    <Label
+                        Text="{i18n:Translate EMail}"
+                        VerticalOptions="Start"
+                        TextColor="Blue">
+                    </Label>
+                    <Entry
+                        Keyboard="Email"
+                        Text="{Binding Email, Mode=TwoWay}"
+                        Placeholder="{i18n:Translate EmailPlaceHolder}">
+                    </Entry>
+                    <Label
+                        Text="{i18n:Translate Password}"
+                        VerticalOptions="Start"
+                        TextColor="Blue">
+                    </Label>
+                    <Entry
+                        IsPassword="true"
+                        Text="{Binding Password, Mode=TwoWay}"
+                        Placeholder="{i18n:Translate PasswordPlaceHolder}">
+                    </Entry>
+
+                    <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand">
+                    </ActivityIndicator>
+
+
+                    <StackLayout
+                    Margin="40,0"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                        <Button
+                        BackgroundColor="Navy"
+                        BorderRadius="23"
+                        Command="{Binding LoginCommand}"
+                        HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="{i18n:Translate Login}"
+                        TextColor="White">
+                        </Button>
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

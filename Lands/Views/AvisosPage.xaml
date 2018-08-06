@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.AvisosPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    BackgroundColor="White"
+    Title="{Binding Mitoken.Nombre_comedor}">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ffimageloadingsvg:SvgImageSourceConverter 
+                x:Key="SvgImageSourceConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Avisos}"
+            Padding="0,0,0,0"
+            >
+            <StackLayout
+                BackgroundColor="LightGray"
+                Orientation="Horizontal"
+                Padding="0,0,0,0">
+
+
+                <Label
+                    
+                    Margin="5,0,0,0"
+                    FontSize="Large"
+        
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Text="MENSAJES"
+                    TextColor="Black">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                            
+                            
+                        </OnPlatform>
+                        
+                    </Label.FontFamily>
+                </Label>
+                <Image
+               HorizontalOptions="EndAndExpand"
+               Source="icoavisos">
+
+                </Image>
+            </StackLayout>
+
+
+            <ListView 
+                
+                BackgroundColor="White"
+                HasUnevenRows="false" 
+                IsPullToRefreshEnabled="true"
+                RowHeight="150"
+    
+                ItemsSource="{Binding Avisos}"
+                SeparatorVisibility="Default"
+                SeparatorColor="Black"
+                >
+
+               
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell
+                            
+                            Height="150">
+                            
+                            <Frame
+                                
+                             CornerRadius="0"
+                                HasShadow="FALSE"
+                                Margin="0,0,0,0"
+                                Padding="0,0,0,0"
+                                
+                                >
+                                
+
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectAvisoCommand}"/>
+                                </Frame.GestureRecognizers>
+                                <Grid
+                                    Margin="0,0,0,0"
+                                    Padding="0,0,0,0"
+                                    RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <StackLayout 
+                                        Margin="0,0,0,0"
+                                        Grid.Row="0"
+                                        Padding="0,0,0,0"
+                                        Spacing="0"
+                                        >
+                                        <StackLayout
+                                           Spacing="0"
+                                            Margin="0,0,0,0"
+                                            Padding="0,0,0,0"
+                                        Orientation ="Horizontal">
+                                            <Label
+                                                IsVisible="{Binding hayavisos}"
+                                              Margin="15,0,0,0"  
+                                            HorizontalOptions="StartAndExpand"
+                                            FontAttributes="Bold"
+                                            FontSize="Medium" 
+                                            Text="MENSAJE"
+                                            TextColor="Black">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="Android" Value="Lato-Bold.ttf#Lato-Bold"/>
+
+
+                                                    </OnPlatform>
+
+                                                </Label.FontFamily>
+                                                </Label>
+                                                <Label 
+                                   
+                                          
+                                         Margin="0,0,15,0"
+                                         FontAttributes="Bold"
+                                              IsVisible="{Binding hayavisos}"
+                                         HorizontalTextAlignment="End"
+                                            FontSize="Medium"
+                                            Text="{Binding Fecha}"
+                                            TextColor="Black">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="Android" Value="Lato-Bold.ttf#Lato-Bold"/>
+
+
+                                                    </OnPlatform>
+
+                                                </Label.FontFamily>
+                                             
+                                            </Label>
+                                        </StackLayout>
+
+                                        <StackLayout
+                                       Orientation="Horizontal"
+                                            Margin="0,0,0,0"
+                                            Spacing="0"
+                                            Padding="0,0,0,15">
+                                            
+                                           
+
+                                                <Label 
+                                                    IsVisible="{Binding hayavisos}"
+                                                    Grid.Column="0"
+                                                Margin="15,0,0,0"
+                                                HorizontalOptions="StartAndExpand"
+                                     HorizontalTextAlignment="Start"
+                                            FontSize="Default"
+                                            Text="Para: "
+                                            TextColor="Black">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                                                        </OnPlatform>
+
+                                                    </Label.FontFamily>
+                                                </Label>
+                                                <Label 
+                                                    IsVisible="{Binding hayavisos}"
+                                                Grid.Column="1"
+                                                Margin="0,0,0,0"
+                                              HorizontalTextAlignment="Start"
+                                                HorizontalOptions="StartAndExpand"
+                                            FontSize="Small"
+                                            Text="{Binding ParaAlumnos}"
+                                            TextColor="Black">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                                                        </OnPlatform>
+
+                                                    </Label.FontFamily>
+                                                </Label>
+                                       
+                                        </StackLayout>
+                                        <StackLayout
+                                              Margin="0,0,0,0"
+                                            Spacing="0"
+                                            Padding="0,0,0,0"  
+                    BackgroundColor="LightGray">
+                                                <StackLayout
+                          
+                                            Spacing="0"
+                                            Padding="0,0,0,0"                       
+                        Margin="0,0,0,1"
+                        BackgroundColor="White">
+                                                </StackLayout>
+                                            </StackLayout>
+                                    
+                                    </StackLayout>
+                  
+
+
+                                    <StackLayout
+                                    
+                                        Spacing="0"
+                                        Padding="0,1,0,0"
+                                        Margin="15,25,15,25"
+                                        Grid.Row="1"
+                                        VerticalOptions="StartAndExpand">
+      
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+
+                                                <ColumnDefinition Width="6*"/>
+
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+
+                                            <StackLayout 
+                                        Grid.Column="0"
+                                        VerticalOptions="Center">
+                                                <Label 
+                                            Text="{Binding Texto}"
+                                            TextColor="Black">
+
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+
+
+                                                        </OnPlatform>
+
+                                                    </Label.FontFamily>
+                                                </Label>
+
+
+                                            </StackLayout>
+                                            <StackLayout 
+                                        Grid.Column="1"
+                                            HorizontalOptions="End"
+                                        VerticalOptions="Center">
+
+
+
+                                                <Image 
+                                         
+                                        Source="ic_chevron_right">
+                                                </Image>
+                                            </StackLayout>
+                                        </Grid>
+
+                                    </StackLayout>
+                                         
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

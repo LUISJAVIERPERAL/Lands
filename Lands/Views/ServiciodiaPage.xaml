@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.ServiciodiaPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Icon="ic_action_language"
+
+     Title="{Binding Mitoken.Nombre_comedor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ffimageloadingsvg:SvgImageSourceConverter 
+                x:Key="SvgImageSourceConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+            Spacing="0"
+            Padding="0">
+        <StackLayout
+            Spacing="0"
+            BindingContext="{Binding Calendario}"
+            Padding="0"
+            Orientation="Vertical">
+            <StackLayout
+                Spacing="0"
+                BackgroundColor="LightGray">
+                <Label
+                   
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    Text="{Binding HijoActual}"
+                    TextColor="Black">
+                </Label>
+            </StackLayout>
+            <StackLayout
+                Spacing="0"
+                BackgroundColor="Transparent">
+                <Label
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    Text="{Binding Fechapulsada}"
+                    TextColor="Black">
+                </Label>
+            </StackLayout>
+            </StackLayout>
+            <StackLayout
+                Spacing="0">
+                <ListView 
+                HeightRequest="1000"
+                BackgroundColor="Transparent"
+                HasUnevenRows="true"
+                IsPullToRefreshEnabled="true"
+                ItemsSource="{Binding Serviciosmes2 , Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                   <DataTemplate>
+                   <ViewCell
+                     Height="500">
+                     <Frame
+                        
+                       Margin="0,0,0,0"
+                       Padding="0,0,0,0">
+
+                    <StackLayout
+                        Padding="0,0,0,0"
+                        Spacing="0">
+                      <StackLayout
+                          Padding="0,0,0,0"
+                          Spacing="0"
+                       Margin="0,0,0,0"     
+                  
+                       IsVisible ="{Binding veraccesos}">
+                       <Label 
+                           
+                        HorizontalOptions ="Center"
+                        VerticalOptions ="Center"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment ="Center"       
+                        FontSize="Medium"
+                        Text="{Binding Nombreservicio}"
+                        TextColor="Black">
+                       </Label>
+                       <Label 
+                         HorizontalOptions ="Center"
+                         VerticalOptions ="Center"
+                         HorizontalTextAlignment="Center"
+                         VerticalTextAlignment ="Center"       
+                         FontSize="Medium"
+                         Text="{Binding Descriacceso}"
+                         TextColor="{Binding Coloracceso}">
+                       </Label>
+                      <StackLayout
+                          Spacing="0"
+                          Padding="0,0,0,0"
+                        IsVisible="{Binding notieneacesso}">
+                            <Image
+                               Margin="0,0,0,0"    
+                               IsVisible="{Binding conmenu}"
+                               HorizontalOptions="Center"
+                               Source="icomenu">
+                             </Image>
+                            <StackLayout
+                                Padding="0,0,0,0"
+                                Spacing="0"
+                                  IsVisible="{Binding sinmenu}"
+                                  BackgroundColor="White">
+                                  <Label
+                                    HorizontalTextAlignment="Center"
+                                    FontAttributes="Bold"
+                                    FontSize="Default"
+                                    Text="SERVICIO SIN MENU"
+                                    TextColor="LightGray">
+                                  </Label>
+                            </StackLayout>
+                            <StackLayout
+                                Spacing="0"
+                                Padding="0,0,0,0"
+                                  IsVisible="{Binding conmenu}"
+                                  Margin="30,2,30,2"
+                                  BackgroundColor="Gray">
+                                 <StackLayout
+                                  Margin="1,1,1,1"
+                                  BackgroundColor="White">
+                                      <Label
+                                          Margin="0,0,0,0"
+                                          HorizontalTextAlignment="Center"
+                                          VerticalTextAlignment ="Center"       
+                                          FontAttributes="Bold"
+                                          FontSize="Medium"
+                                          Text="{Binding Nombremenu1}"
+                                          TextColor="Black">
+                                      </Label>
+                                     <Label 
+                                           Margin="0,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="ENTRANTE"
+                                           TextColor="LightGray">
+                                     </Label>
+                                     <Label 
+                                          
+                                         Margin="0,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding entrante1}"
+                                           TextColor="Gray">
+                                       </Label>
+                                       <Label 
+                                           Margin="0,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="PRIMER PLATO"
+                                           TextColor="LightGray">
+                                       </Label>
+                                      <Label 
+                                           Margin="0,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding primerplato1}"
+                                           TextColor="Gray">
+                                      </Label>
+                                      <Label 
+                                           Margin="0,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="SEGUNDO PLATO"
+                                           TextColor="LightGray">
+                                      </Label>
+                                      <Label 
+                                           Margin="3,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding segundoplato1}"
+                                           TextColor="Gray">
+                                       </Label>
+                                       <Label 
+                                           Margin="3,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="POSTRE"
+                                           TextColor="LightGray">
+                                       </Label>
+                                       <Label 
+                                           Margin="3,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding postre1}"
+                                           TextColor="Gray">
+                                       </Label>
+                                 </StackLayout>
+
+
+                            </StackLayout>
+                                            </StackLayout>
+
+                         <StackLayout
+                             Spacing="0"
+                             Padding="0,0,0,0"
+                            IsVisible="{Binding tieneacesso}">
+                                                <Image
+                               Margin="0,0,0,0"    
+                               IsVisible="{Binding conmenu}"
+                               HorizontalOptions="Center"
+                               Source="icomenu">
+                                                </Image>
+                                                <StackLayout
+                                  IsVisible="{Binding sinmenu}"
+                                   Margin="30,2,30,2"
+                                  BackgroundColor="White">
+                                                    <Label
+                                    HorizontalTextAlignment="Center"
+                                    FontAttributes="Bold"
+                                    FontSize="Default"
+                                    Text="SERVICIO SIN MENU"
+                                    TextColor="LightGray">
+                                                    </Label>
+                                                </StackLayout>
+                                                <StackLayout
+                                                    Spacing="0"
+                                                    Padding="0,0,0,0"
+                                  IsVisible="{Binding conmenu}"
+                                  Margin="30,2,30,2"
+                                  BackgroundColor="Gray">
+                                                    <StackLayout
+                                                        Spacing="0"
+                                                        Padding="0,0,0,0"
+                                  Margin="1,1,1,1"
+                                  BackgroundColor="White">
+                                      <Label
+                                          
+                                          Margin="10,0,0,0"
+                                          HorizontalTextAlignment="Center"
+                                          VerticalTextAlignment ="Center"       
+                                          FontAttributes="Bold"
+                                          FontSize="Medium"
+                                          Text="{Binding Nommenu}"
+                                          TextColor="Black">
+                                      </Label>
+                                      <Label 
+                                           Margin="10,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding Tipoplato1}"
+                                           TextColor="LightGray">
+                                       </Label>
+                                     <StackLayout
+                                          Orientation="Horizontal">
+                                        <Label 
+                                           Margin="10,0,0,0"
+                                            HorizontalOptions="StartAndExpand"
+                                           HorizontalTextAlignment="Start"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding Nomplato1}"
+                                           TextColor="Gray">
+                                        </Label>
+                                                            <Image 
+                                        Margin="0,0,10,0"
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="{Binding Iconoestrellapeque1}"
+                                     >
+                                                            </Image>
+                                                        </StackLayout>
+                                     <Label 
+                                           Margin="10,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding Tipoplato2}"
+                                           TextColor="LightGray">
+                                     </Label>
+                                     <StackLayout
+                                      Orientation="Horizontal">
+                                     <Label 
+                                       Margin="10,0,0,0"
+                                       HorizontalOptions="StartAndExpand"
+                                       HorizontalTextAlignment="Start"
+                                       VerticalTextAlignment ="Center"       
+                                       FontSize="Default"
+                                       Text="{Binding Nomplato2}"
+                                       TextColor="Gray">
+                                     </Label>
+                                     <Image 
+                                        Margin="0,0,10,0"
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="{Binding Iconoestrellapeque2}"
+                                     >
+                                     </Image>
+                                     </StackLayout>
+                                     <Label 
+                                           Margin="10,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding Tipoplato3}"
+                                           TextColor="LightGray">
+                                      </Label>
+                                      <StackLayout
+                                      Orientation="Horizontal">
+                                        <Label 
+                                          Margin="10,0,0,0"
+                                          HorizontalOptions="StartAndExpand"
+                                          HorizontalTextAlignment="Start"
+                                          VerticalTextAlignment ="Center"       
+                                          FontSize="Default"
+                                          Text="{Binding Nomplato3}"
+                                          TextColor="Gray">
+                                        </Label>
+                                        <Image 
+                                           Margin="0,0,10,0"
+                                           HorizontalOptions="EndAndExpand"
+                                          Source="{Binding Iconoestrellapeque3}"
+                                          >
+                                        </Image>
+                                     </StackLayout>
+                                     <Label 
+                                           Margin="10,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding Tipoplato4}"
+                                           TextColor="LightGray">
+                                     </Label>
+                                      <StackLayout
+                                          Orientation="Horizontal">
+                                      <Label 
+                                           Margin="10,0,0,0"
+                                           HorizontalOptions="StartAndExpand"
+                                           HorizontalTextAlignment="Start"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding Nomplato4}"
+                                           TextColor="Gray">
+                                       </Label>
+                                       <Image 
+                                          Margin="0,0,10,0"
+                                          HorizontalOptions="EndAndExpand"
+                                          Source="{Binding Iconoestrellapeque4}"
+                                         >
+                                       </Image>
+                                       </StackLayout>
+                                                 </StackLayout>
+                                              </StackLayout>
+                                            </StackLayout>
+
+                                        </StackLayout>
+                                        <StackLayout
+                                              Margin="0,0,0,0"     
+                                            Padding="0,0,0,0"  
+    IsVisible ="{Binding verasistencia}">
+                                            <Label 
+                                                   BackgroundColor="WhiteSmoke"   
+                                                   HorizontalOptions ="Center"
+                                                   VerticalOptions ="Center"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment ="Center"       
+                                                   FontSize="Medium"
+                                                   Text="{Binding Nombreservicio}"
+                                                   TextColor="Black">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+
+                                            </Label>
+                                            <Image
+                               Margin="0,0,0,0"    
+                               IsVisible="{Binding conmenu}"
+                               HorizontalOptions="Center"
+                               Source="icomenu">
+                                            </Image>
+                                            <StackLayout
+                                Padding="0,0,0,0"
+                                Spacing="0"
+                                  IsVisible="{Binding sinmenu}"
+                            
+                                  BackgroundColor="White">
+                                                <Label
+                                    HorizontalTextAlignment="Center"
+                                    FontAttributes="Bold"
+                                    FontSize="Default"
+                                    Text="SERVICIO SIN MENU"
+                                    TextColor="LightGray">
+                                                </Label>
+
+
+
+
+                                            </StackLayout>
+                                            <StackLayout
+                                Spacing="0"
+                                Padding="0,0,0,0"
+                                  IsVisible="{Binding conmenu}"
+                                  Margin="30,2,30,2"
+                                  BackgroundColor="Gray">
+                                                <StackLayout
+                                  Margin="1,1,1,1"
+                                  BackgroundColor="White">
+                                                    <Label
+                                          Margin="0,0,0,0"
+                                          HorizontalTextAlignment="Center"
+                                          VerticalTextAlignment ="Center"       
+                                          FontAttributes="Bold"
+                                          FontSize="Medium"
+                                          Text="{Binding Nombremenu1}"
+                                          TextColor="Black">
+                                                    </Label>
+                                                    <Label 
+                                           Margin="0,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="ENTRANTE"
+                                           TextColor="LightGray">
+                                                    </Label>
+                                                    <Label 
+                                          
+                                         Margin="0,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding entrante1}"
+                                           TextColor="Gray">
+                                                    </Label>
+                                                    <Label 
+                                           Margin="0,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="PRIMER PLATO"
+                                           TextColor="LightGray">
+                                                    </Label>
+                                                    <Label 
+                                           Margin="0,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding primerplato1}"
+                                           TextColor="Gray">
+                                                    </Label>
+                                                    <Label 
+                                           Margin="0,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="SEGUNDO PLATO"
+                                           TextColor="LightGray">
+                                                    </Label>
+                                                    <Label 
+                                           Margin="3,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding segundoplato1}"
+                                           TextColor="Gray">
+                                                    </Label>
+                                                    <Label 
+                                           Margin="3,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="POSTRE"
+                                           TextColor="LightGray">
+                                                    </Label>
+                                                    <Label 
+                                           Margin="3,0,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment ="Center"       
+                                           FontSize="Default"
+                                           Text="{Binding postre1}"
+                                           TextColor="Gray">
+                                                    </Label>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <StackLayout
+                                                    IsVisible="{Binding notieneacesso}">
+                                                <StackLayout>
+
+                                                    <StackLayout
+                                                            IsVisible = "{Binding modelo2}"
+                                                            BackgroundColor="WhiteSmoke">
+                                                        <Grid
+                                                               
+                                                                Margin=" 0,0,0,0"
+                                                                Padding="0,0,0,0">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                              
+                                                            </Grid.RowDefinitions>
+
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="3*"/>
+                                                                <ColumnDefinition Width="3*"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
+
+
+                                                            <Label 
+                                                         Grid.Row="0"
+                                                         Grid.Column="0"
+                                                         Margin="0,0,0,0"
+                                                         HorizontalOptions="StartAndExpand"
+                                                         HorizontalTextAlignment="Center"
+                                                         VerticalTextAlignment ="Center"       
+                                                         FontSize="Default"
+                                                         TextColor="{Binding colorasistencia}"         
+                                                         Text="{Binding Iconoasistencia, Mode=TwoWay}" 
+                                                        BackgroundColor="WhiteSmoke">
+                                                                <Label.FontFamily>
+                                                                    <OnPlatform x:TypeArguments="x:String">
+                                                                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                                    </OnPlatform>
+                                                                </Label.FontFamily>
+                                                            </Label>
+                                                      
+
+                                                            <Label 
+                                                                IsVisible="{Binding conmenu, Mode=TwoWay}"
+                                                                Grid.Row="0"
+                                                                Grid.Column="1"
+                                                                Margin="0,0,0,0"
+                                                                HorizontalOptions="StartAndExpand"
+                                                                HorizontalTextAlignment="Center"
+                                                                VerticalTextAlignment ="Center"       
+                                                                FontSize="Default"
+                                                                Text="{Binding Iconodieta, Mode=TwoWay}" 
+                                                                BackgroundColor="WhiteSmoke"   
+                                                                TextColor="Gray">
+                                                                <Label.FontFamily>
+                                                                    <OnPlatform x:TypeArguments="x:String">
+                                                                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                                    </OnPlatform>
+                                                                </Label.FontFamily>
+                                                            </Label>
+                                                            <Button  
+                                                                  Image="{Binding botonasistencia}"
+                                                             
+                                                                  BackgroundColor="Transparent"
+                                                                  Grid.Row="1"
+                                                                  Grid.Column="0"
+                                                                  Command="{Binding CambiarCommand}"
+                                                                  CommandParameter="6"/>
+
+                                                            <Button       
+                                                                    Image="{Binding botondieta}"
+                                                                      IsVisible="{Binding conmenu}"
+                                                                    IsEnabled="{Binding conmenu}"
+                                                                
+                                                                BackgroundColor="Transparent"
+                                                                     Grid.Row="1"
+                                                                    Grid.Column="1"
+                                                                    Command="{Binding CambiarCommand}"
+                                                                    CommandParameter="4"/>
+
+                                                          
+                                                        </Grid>
+
+
+                                                    </StackLayout>
+                                                    <StackLayout
+                                                            IsVisible = "{Binding modelo1}"
+                                                            BackgroundColor="WhiteSmoke">
+                                                        <Grid
+                                                               
+                                                                Margin=" 0,0,0,0"
+                                                                Padding="0,0,0,0">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+
+                                                            </Grid.RowDefinitions>
+
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="3*"/>
+                                                                <ColumnDefinition Width="3*"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
+
+
+                                                            <Label 
+                                                         Grid.Row="0"
+                                                         Grid.Column="0"
+                                                         Margin="0,0,0,0"
+                                                         HorizontalOptions="StartAndExpand"
+                                                         HorizontalTextAlignment="Center"
+                                                         VerticalTextAlignment ="Center"       
+                                                         FontSize="Default"
+                                                         TextColor="{Binding colorausencia}"         
+                                                         Text="{Binding Iconoausencia, Mode=TwoWay}" 
+                                                        BackgroundColor="WhiteSmoke">
+                                                                <Label.FontFamily>
+                                                                    <OnPlatform x:TypeArguments="x:String">
+                                                                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                                    </OnPlatform>
+                                                                </Label.FontFamily>
+                                                            </Label>
+                                                            <Label 
+                                                                IsVisible="{Binding conmenu, Mode=TwoWay}"
+                                                                Grid.Row="0"
+                                                                Grid.Column="1"
+                                                                Margin="0,0,0,0"
+                                                                HorizontalOptions="StartAndExpand"
+                                                                HorizontalTextAlignment="Center"
+                                                                VerticalTextAlignment ="Center"       
+                                                                FontSize="Default"
+                                                                Text="{Binding Iconodieta, Mode=TwoWay}" 
+                                                                BackgroundColor="WhiteSmoke"   
+                                                                TextColor="Gray">
+                                                                <Label.FontFamily>
+                                                                    <OnPlatform x:TypeArguments="x:String">
+                                                                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                                                                    </OnPlatform>
+                                                                </Label.FontFamily>
+                                                            </Label>
+                                                            <Button  
+                                                                  Image="{Binding botonausencia}"
+                                                                  BackgroundColor="Transparent"
+                                                                  Grid.Row="1"
+                                                                  Grid.Column="0"
+                                                                  Command="{Binding CambiarCommand}"
+                                                                  CommandParameter="6"/>
+                                                            <Button 
+                                                            
+                                                                    Image="{Binding botondieta}"
+                                                                    BackgroundColor="Transparent"
+                                                                    IsVisible="{Binding conmenu}"
+                                                                    IsEnabled="{Binding conmenu}"
+                                                                    Grid.Row="1"
+                                                                    Grid.Column="1"
+                                                                    Command="{Binding CambiarCommand}"
+                                                                    CommandParameter="4"/>
+
+                                                         
+                                                        </Grid>
+
+
+                                                    </StackLayout>
+
+
+
+
+
+
+
+                                                </StackLayout>
+
+
+
+
+
+                                            </StackLayout>
+
+
+                                        </StackLayout>
+
+
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+  
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
